@@ -25,4 +25,14 @@ class ApiController extends AbstractController {
         return new JsonResponse($data);
     }
 
+    /**
+     * @throws GuzzleException
+     */
+    public function details($food, $page, $perPage): JsonResponse {
+        $serializer = $this->apiService->getSerializer();
+        $response = json_decode($this->apiService->find($food, $page, $perPage)->getBody()->getContents());
+        $data = $this->apiService->getData($serializer, $response, "details");
+        return new JsonResponse($data);
+    }
+
 }

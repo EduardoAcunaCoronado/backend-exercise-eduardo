@@ -10,3 +10,11 @@ find_by_food:
     food: ""
     page: 1
     perPage: 25
+
+details:
+  path: /details/{food}/{page}/{perPage}
+  controller: App\Controller\ApiController::details
+  defaults:
+    food: ""
+    page: 1
+    perPage: 25
