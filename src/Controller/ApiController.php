@@ -7,10 +7,17 @@ use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
+/**
+ * Class ApiController
+ * @package App\Controller
+ */
 class ApiController extends AbstractController {
 
     private ApiService $apiService;
 
+    /**
+     * ApiController constructor.
+     */
     public function __construct() {
         $this->apiService = new ApiService();
     }
